@@ -1,6 +1,7 @@
 import pandas as pd
 import plotly.graph_objects as go
 from dash import Dash, dcc, html, Input, Output, dash_table
+import os
 
 # Load and preprocess datasets
 data1 = pd.read_csv('EEGOpt_Trials_ICM_Dataset.csv')
@@ -306,4 +307,6 @@ def update_visualization(selected_dataset, selected_sampler, selected_random_sta
     return title, heatmaps, scatter_plots, additional_plots, table, sampler_options, selected_sampler, random_state_options, selected_random_state
 
 if __name__ == "__main__":
-    app.run_server(debug=True)
+    port = int(os.environ.get("PORT", 10000))  
+    app.run_server(debug=True, host="0.0.0.0", port=port)
+
