@@ -19,3 +19,5 @@ A Dash application for visualizing EEG optimization results.
    ```bash
    python app.py
    ```
+## Visualization
+The codes in this repository is currently running on https://eegopt-visualization.onrender.com/. Please visit the link to view the visualizations. 
